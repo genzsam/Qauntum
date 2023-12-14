@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML File Paths</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffc0cb; /* Fun pink background */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #00a1e3; /* Bright blue header */
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f5f5f5; /* Light gray content background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff3366; /* Vibrant pink heading */
+        }
+        h2,h3 {
+            color: #00a1e3; /* Bright blue headings */
+        }
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f0f0f0; /* Slightly off-white code blocks */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Previous and Next buttons */
+        h2 a {
+            text-decoration: none;
+            background-color: #00a1e3; /* Bright blue button background */
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        h2 a:hover {
+            background-color: #ff3366; /* Vibrant pink button background on hover */
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HTML File Paths</h1>
+    </header>
+    <div class="content">
+        <h2>Introduction</h2>
+        <p>In HTML, file paths are used to specify the location of files (such as images, stylesheets, or scripts) that are linked or embedded in a web page. Understanding how to write file paths correctly is essential for building effective websites.</p>
+
+        <h2>Absolute vs. Relative Paths</h2>
+        <p>There are two main types of file paths in HTML:</p>
+        <ul>
+            <li><strong>Absolute Paths:</strong> These paths specify the complete address of a file or resource, typically starting from the root directory of the website. For example: <code>/images/pic.jpg</code></li>
+            <li><strong>Relative Paths:</strong> These paths specify the location of a file relative to the current web page's location. Relative paths are more flexible and commonly used. For example: <code>images/pic.jpg</code></li>
+        </ul>
+
+        <h2>Common File Paths</h2>
+        <p>Here are some common file paths you might encounter:</p>
+        <pre>
+            &lt;img src="images/pic.jpg" alt="A picture"&gt;
+            &lt;link rel="stylesheet" href="styles/main.css"&gt;
+            &lt;script src="scripts/app.js"&gt;&lt;/script&gt;
+        </pre>
+
+        <h2>Root Directory</h2>
+        <p>The root directory of a website is the highest-level directory, often represented as "<code>/</code>." Absolute paths start from this directory.</p>
+
+        <h2>Directory Levels</h2>
+        <p>When navigating through directories, you can use forward slashes (<code>/</code>) to separate directory names. For example, <code>images/photos/pic.jpg</code> represents a file located in the "pic.jpg" file within the "photos" directory, which is inside the "images" directory.</p>
+
+        <h2>Quiz</h2>
+        <p>Test your knowledge!</p>
+        <ol>
+            <li class="quiz-question">What are the two main types of file paths in HTML?</li>
+            <li class="quiz-question">How do you specify the root directory in an absolute file path?</li>
+            <li class="quiz-question">In which situations would you prefer using relative paths over absolute paths?</li>
+        </ol>
+ <h2> <a href="Lists.html">Previous</a> 
+            <a href="Emojis.html" style="float: right;">Next</a> </h2>
+    </div>
+</body>
+
+</html>

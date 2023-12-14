@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Structures Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        #quiz-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #question {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        #options button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #options button:hover {
+            background-color: #e0e0e0;
+        }
+
+        #next-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #next-button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Structures Quiz</h1>
+    <div id="quiz-container">
+        <div id="question"></div>
+        <div id="options"></div>
+        <button id="next-button">Next</button>
+        <div id="result"></div>
+        <button href = "Next.html">Next</button>
+    </div>
+    <script>
+        const questions = [
+            {
+                question: "What is a data structure?",
+                options: [
+                    "A way to store and organize data",
+                    "A programming language",
+                    "A type of hardware",
+                    "A sorting algorithm"
+                ],
+                answer: 0
+            },
+            {
+                question: "Which data structure follows the Last-In-First-Out (LIFO) principle?",
+                options: [
+                    "Queue",
+                    "Stack",
+                    "Linked List",
+                    "Binary Tree"
+                ],
+                answer: 1
+            },
+            {
+                question: "What is the time complexity of searching an element in a binary search tree?",
+                options: [
+                    "O(log N)",
+                    "O(N)",
+                    "O(N^2)",
+                    "O(1)"
+                ],
+                answer: 0
+            },
+            {
+                question: "Which data structure is used to implement a priority queue?",
+                options: [
+                    "Queue",
+                    "Stack",
+                    "Heap",
+                    "Array"
+                ],
+                answer: 2
+            },
+            {
+                question: "In a linked list, what is the element called that points to the next element?",
+                options: [
+                    "Pointer",
+                    "Index",
+                    "Node",
+                    "Link"
+                ],
+                answer: 0
+            },
+            // Add more questions here...
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const questionElement = document.getElementById("question");
+        const optionsElement = document.getElementById("options");
+        const nextButton = document.getElementById("next-button");
+        const resultElement = document.getElementById("result");
+
+        function loadQuestion() {
+            questionElement.textContent = questions[currentQuestion].question;
+            optionsElement.innerHTML = "";
+
+            questions[currentQuestion].options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.addEventListener("click", () => checkAnswer(index));
+                optionsElement.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (selectedIndex === questions[currentQuestion].answer) {
+                score++;
+            }
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            questionElement.textContent = "";
+            optionsElement.innerHTML = "";
+            nextButton.style.display = "none";
+            resultElement.textContent = `Your Score: ${score} out of ${questions.length}`;
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
